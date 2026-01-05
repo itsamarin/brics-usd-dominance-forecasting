@@ -116,17 +116,17 @@ USD will remain the dominant global currency post-July 2027, but with reduced po
 
 ## Data Sources
 
-1. **Bitcoin Trading Volume**
-   Source: [Bitcoinity.org](https://data.bitcoinity.org/markets/volume/30d?c=e&t=b)
-   Period: December 2020 - December 2025
+1. **Gold Trade Data**
+   - Source: [UN Comtrade Plus](https://comtradeplus.un.org/)
+   - Period: January 2021 - October 2025
 
-2. **Gold Trade Data**
-   Source: [UN Comtrade Plus](https://comtradeplus.un.org/)
-   Period: January 2021 - October 2025
+2. **Crude Oil Trade Data**
+   - Source: [UN Comtrade Plus](https://comtradeplus.un.org/)
+   - Period: January 2021 - October 2025
 
-3. **Crude Oil Trade Data**
-   Source: [UN Comtrade Plus](https://comtradeplus.un.org/)
-   Period: January 2021 - October 2025
+3. **Bitcoin Trading Volume**
+   - Source: [Bitcoinity.org](https://data.bitcoinity.org/markets/volume/30d?c=e&t=b)
+   - Period: December 2020 - December 2025
 
 ---
 
@@ -184,7 +184,3 @@ This project is part of an academic case study for educational purposes.
 ## Repository
 
 [https://github.com/itsamarin/brics-usd-dominance-forecasting](https://github.com/itsamarin/brics-usd-dominance-forecasting)
-
----
-
-**Last Updated:** January 5, 2026
