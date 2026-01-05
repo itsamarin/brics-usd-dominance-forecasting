@@ -166,19 +166,6 @@ pip install pandas matplotlib numpy openpyxl
 
 ---
 
-## Academic Context
-
-**Course:** Oil, Gold, and Crypto: How Global Tensions are linked to Commodities
-**Institution:** University of Europe & Avron Global Consultancy Initiative
-**Semester:** Winter 2025
-**Section:** D - Predictive Analysis
-
----
-
-## License
-
-This project is part of an academic case study for educational purposes.
-
 ---
 
 ## Repository

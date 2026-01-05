@@ -2,11 +2,6 @@
 Generate Prediction Figures as PDFs
 This script creates publication-quality PDF charts for all predictions.
 
-Author: Predictive Analysis Team
-Course: Oil, Gold, and Crypto: How Global Tensions are linked to Commodities
-University of Europe & Avron Global Consultancy Initiative
-Winter Semester 2025
-
 Usage:
     python generate_prediction_figures.py
 
@@ -881,7 +876,6 @@ def create_combined_pdf(btc_monthly, gold_brics_monthly, oil_brics_monthly,
         # Add metadata
         d = pdf.infodict()
         d['Title'] = 'BRICS USD Dominance - Predictive Analysis Forecasts'
-        d['Author'] = 'University of Europe & Avron Global Consultancy'
         d['Subject'] = '3-Month Moving Average Forecasts for BTC, Gold, and Oil'
         d['Keywords'] = 'BRICS, USD, Forecasting, Bitcoin, Gold, Oil'
         d['CreationDate'] = datetime.now()
