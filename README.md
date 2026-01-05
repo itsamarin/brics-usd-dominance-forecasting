@@ -42,21 +42,21 @@ python3 generate_prediction_figures.py
 The script generates 9 professional PDF figures organized into four categories:
 
 ### Forecast Figures (with 3-month predictions)
-1. `btc_forecast.pdf` - Bitcoin trading volume forecast
-2. `gold_brics_forecast.pdf` - BRICS gold imports forecast (quantity & value)
-3. `oil_brics_forecast.pdf` - BRICS oil imports forecast (quantity & value)
+1. `Fig1_btc_forecast.pdf` - Bitcoin trading volume forecast
+2. `Fig2_gold_brics_forecast.pdf` - BRICS gold imports forecast (quantity & value)
+3. `Fig3_oil_brics_forecast.pdf` - BRICS oil imports forecast (quantity & value)
 
 ### Time Series Analysis (complete historical trends)
-4. `btc_reserves_timeseries.pdf` - Bitcoin volume over time with statistics
-5. `gold_reserves_timeseries.pdf` - Gold imports over time with statistics
-6. `oil_reserves_timeseries.pdf` - Oil imports over time with statistics
+4. `Fig4_btc_reserves_timeseries.pdf` - Bitcoin volume over time with statistics
+5. `Fig5_gold_reserves_timeseries.pdf` - Gold imports over time with statistics
+6. `Fig6_oil_reserves_timeseries.pdf` - Oil imports over time with statistics
 
 ### Comparative Analysis
-7. `comparative_analysis.pdf` - All three commodities normalized (0-100 scale)
-8. `comparative_forecast.pdf` - All three commodities with 3-month forecasts
+7. `Fig7_comparative_analysis.pdf` - All three commodities normalized (0-100 scale)
+8. `Fig8_comparative_forecast.pdf` - All three commodities with 3-month forecasts
 
 ### Combined Document
-9. `all_predictions_combined.pdf` - All forecasts in a single PDF
+9. `Fig9_all_predictions_combined.pdf` - All forecasts in a single PDF
 
 **Figure Specifications:**
 - Resolution: 300 DPI (publication quality)
@@ -71,15 +71,15 @@ The script generates 9 professional PDF figures organized into four categories:
 brics-usd-dominance-forecasting/
 ├── README.md
 ├── figures/
-│   ├── btc_forecast.pdf
-│   ├── gold_brics_forecast.pdf
-│   ├── oil_brics_forecast.pdf
-│   ├── btc_reserves_timeseries.pdf
-│   ├── gold_reserves_timeseries.pdf
-│   ├── oil_reserves_timeseries.pdf
-│   ├── comparative_analysis.pdf
-│   ├── comparative_forecast.pdf
-│   └── all_predictions_combined.pdf
+│   ├── Fig1_btc_forecast.pdf
+│   ├── Fig2_gold_brics_forecast.pdf
+│   ├── Fig3_oil_brics_forecast.pdf
+│   ├── Fig4_btc_reserves_timeseries.pdf
+│   ├── Fig5_gold_reserves_timeseries.pdf
+│   ├── Fig6_oil_reserves_timeseries.pdf
+│   ├── Fig7_comparative_analysis.pdf
+│   ├── Fig8_comparative_forecast.pdf
+│   └── Fig9_all_predictions_combined.pdf
 └── predictive-analysis-forecasts/
     ├── generate_prediction_figures.py
     ├── DATA_SETUP.md

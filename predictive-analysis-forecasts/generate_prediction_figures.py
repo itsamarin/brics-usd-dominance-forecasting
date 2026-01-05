@@ -7,21 +7,21 @@ Usage:
 
 Outputs (saved to ../figures/):
     Forecast Figures:
-    - btc_forecast.pdf (1 chart)
-    - gold_brics_forecast.pdf (2 charts)
-    - oil_brics_forecast.pdf (2 charts)
+    - Fig1_btc_forecast.pdf (1 chart)
+    - Fig2_gold_brics_forecast.pdf (2 charts)
+    - Fig3_oil_brics_forecast.pdf (2 charts)
 
     Time Series Figures:
-    - btc_reserves_timeseries.pdf
-    - gold_reserves_timeseries.pdf
-    - oil_reserves_timeseries.pdf
+    - Fig4_btc_reserves_timeseries.pdf
+    - Fig5_gold_reserves_timeseries.pdf
+    - Fig6_oil_reserves_timeseries.pdf
 
     Comparative Analysis:
-    - comparative_analysis.pdf (all commodities normalized)
-    - comparative_forecast.pdf (all commodities with 3-month forecasts)
+    - Fig7_comparative_analysis.pdf (all commodities normalized)
+    - Fig8_comparative_forecast.pdf (all commodities with 3-month forecasts)
 
     Combined Document:
-    - all_predictions_combined.pdf (all forecasts)
+    - Fig9_all_predictions_combined.pdf (all forecasts)
 
 Total: 9 PDF files with professional charts
 """
@@ -150,7 +150,7 @@ def calculate_3ma_forecast(df, value_col, n_forecast=3):
     return result
 
 
-def plot_btc_forecast(btc_monthly, output_filename='btc_forecast.pdf'):
+def plot_btc_forecast(btc_monthly, output_filename='Fig1_btc_forecast.pdf'):
     """
     Create BTC forecast figure and save as PDF.
     """
@@ -222,7 +222,7 @@ def plot_btc_forecast(btc_monthly, output_filename='btc_forecast.pdf'):
     print(f"   Created: {output_path}")
 
 
-def plot_gold_forecast(gold_brics_monthly, output_filename='gold_brics_forecast.pdf'):
+def plot_gold_forecast(gold_brics_monthly, output_filename='Fig2_gold_brics_forecast.pdf'):
     """
     Create Gold BRICS forecast figure (2 subplots) and save as PDF.
     """
@@ -319,7 +319,7 @@ def plot_gold_forecast(gold_brics_monthly, output_filename='gold_brics_forecast.
     print(f"   Created: {output_path}")
 
 
-def plot_oil_forecast(oil_brics_monthly, output_filename='oil_brics_forecast.pdf'):
+def plot_oil_forecast(oil_brics_monthly, output_filename='Fig3_oil_brics_forecast.pdf'):
     """
     Create Oil BRICS forecast figure (2 subplots) and save as PDF.
     """
@@ -453,7 +453,7 @@ def plot_reserves_time_series(btc_monthly, gold_brics_monthly, oil_brics_monthly
             bbox=dict(boxstyle='round', facecolor='lightblue', alpha=0.5))
 
     plt.tight_layout()
-    output_path = os.path.join(FIGURES_DIR, 'btc_reserves_timeseries.pdf')
+    output_path = os.path.join(FIGURES_DIR, 'Fig4_btc_reserves_timeseries.pdf')
     plt.savefig(output_path, format='pdf', dpi=300, bbox_inches='tight')
     plt.close()
     print(f"   Created: {output_path}")
@@ -490,7 +490,7 @@ def plot_reserves_time_series(btc_monthly, gold_brics_monthly, oil_brics_monthly
             bbox=dict(boxstyle='round', facecolor='wheat', alpha=0.5))
 
     plt.tight_layout()
-    output_path = os.path.join(FIGURES_DIR, 'gold_reserves_timeseries.pdf')
+    output_path = os.path.join(FIGURES_DIR, 'Fig5_gold_reserves_timeseries.pdf')
     plt.savefig(output_path, format='pdf', dpi=300, bbox_inches='tight')
     plt.close()
     print(f"   Created: {output_path}")
@@ -527,7 +527,7 @@ def plot_reserves_time_series(btc_monthly, gold_brics_monthly, oil_brics_monthly
             bbox=dict(boxstyle='round', facecolor='lightgray', alpha=0.5))
 
     plt.tight_layout()
-    output_path = os.path.join(FIGURES_DIR, 'oil_reserves_timeseries.pdf')
+    output_path = os.path.join(FIGURES_DIR, 'Fig6_oil_reserves_timeseries.pdf')
     plt.savefig(output_path, format='pdf', dpi=300, bbox_inches='tight')
     plt.close()
     print(f"   Created: {output_path}")
@@ -597,7 +597,7 @@ def plot_comparative_chart(btc_monthly, gold_brics_monthly, oil_brics_monthly):
             bbox=dict(boxstyle='round', facecolor='lightyellow', alpha=0.7))
 
     plt.tight_layout()
-    output_path = os.path.join(FIGURES_DIR, 'comparative_analysis.pdf')
+    output_path = os.path.join(FIGURES_DIR, 'Fig7_comparative_analysis.pdf')
     plt.savefig(output_path, format='pdf', dpi=300, bbox_inches='tight')
     plt.close()
     print(f"   Created: {output_path}")
@@ -692,14 +692,14 @@ def plot_comparative_forecast(btc_monthly, gold_brics_monthly, oil_brics_monthly
             bbox=dict(boxstyle='round', facecolor='lightyellow', alpha=0.7))
 
     plt.tight_layout()
-    output_path = os.path.join(FIGURES_DIR, 'comparative_forecast.pdf')
+    output_path = os.path.join(FIGURES_DIR, 'Fig8_comparative_forecast.pdf')
     plt.savefig(output_path, format='pdf', dpi=300, bbox_inches='tight')
     plt.close()
     print(f"   Created: {output_path}")
 
 
 def create_combined_pdf(btc_monthly, gold_brics_monthly, oil_brics_monthly,
-                        output_filename='all_predictions_combined.pdf'):
+                        output_filename='Fig9_all_predictions_combined.pdf'):
     """
     Create a single PDF with all prediction figures.
     """
@@ -905,13 +905,13 @@ def main():
     print(f"   Oil BRICS data: {len(oil_brics_monthly)} months")
 
     print("\n[2/9] Creating BTC forecast figure...")
-    plot_btc_forecast(btc_monthly, 'btc_forecast.pdf')
+    plot_btc_forecast(btc_monthly, 'Fig1_btc_forecast.pdf')
 
     print("\n[3/9] Creating Gold BRICS forecast figure...")
-    plot_gold_forecast(gold_brics_monthly, 'gold_brics_forecast.pdf')
+    plot_gold_forecast(gold_brics_monthly, 'Fig2_gold_brics_forecast.pdf')
 
     print("\n[4/9] Creating Oil BRICS forecast figure...")
-    plot_oil_forecast(oil_brics_monthly, 'oil_brics_forecast.pdf')
+    plot_oil_forecast(oil_brics_monthly, 'Fig3_oil_brics_forecast.pdf')
 
     print("\n[5/9] Creating individual time series figures...")
     plot_reserves_time_series(btc_monthly, gold_brics_monthly, oil_brics_monthly)
@@ -924,7 +924,7 @@ def main():
 
     print("\n[8/9] Creating combined PDF with all predictions...")
     create_combined_pdf(btc_monthly, gold_brics_monthly, oil_brics_monthly,
-                       'all_predictions_combined.pdf')
+                       'Fig9_all_predictions_combined.pdf')
 
     print("\n[9/9] Summary complete!")
 
@@ -934,18 +934,18 @@ def main():
     print(f"\nOutput directory: {FIGURES_DIR}")
     print("\nGenerated files:")
     print("\n  FORECAST FIGURES (with 3-month predictions):")
-    print("  1. btc_forecast.pdf - Bitcoin trading volume forecast")
-    print("  2. gold_brics_forecast.pdf - BRICS gold imports forecast (2 charts)")
-    print("  3. oil_brics_forecast.pdf - BRICS oil imports forecast (2 charts)")
+    print("  1. Fig1_btc_forecast.pdf - Bitcoin trading volume forecast")
+    print("  2. Fig2_gold_brics_forecast.pdf - BRICS gold imports forecast (2 charts)")
+    print("  3. Fig3_oil_brics_forecast.pdf - BRICS oil imports forecast (2 charts)")
     print("\n  TIME SERIES FIGURES (historical trends):")
-    print("  4. btc_reserves_timeseries.pdf - BTC volume over time")
-    print("  5. gold_reserves_timeseries.pdf - Gold imports over time")
-    print("  6. oil_reserves_timeseries.pdf - Oil imports over time")
+    print("  4. Fig4_btc_reserves_timeseries.pdf - BTC volume over time")
+    print("  5. Fig5_gold_reserves_timeseries.pdf - Gold imports over time")
+    print("  6. Fig6_oil_reserves_timeseries.pdf - Oil imports over time")
     print("\n  COMPARATIVE ANALYSIS:")
-    print("  7. comparative_analysis.pdf - All three commodities compared (normalized)")
-    print("  8. comparative_forecast.pdf - All three commodities with 3-month forecasts")
+    print("  7. Fig7_comparative_analysis.pdf - All three commodities compared (normalized)")
+    print("  8. Fig8_comparative_forecast.pdf - All three commodities with 3-month forecasts")
     print("\n  COMBINED DOCUMENT:")
-    print("  9. all_predictions_combined.pdf - All forecasts in one PDF")
+    print("  9. Fig9_all_predictions_combined.pdf - All forecasts in one PDF")
     print("\nTotal: 9 PDF files generated")
     print("\nAll figures include:")
     print("    - Historical data (solid lines with markers)")
