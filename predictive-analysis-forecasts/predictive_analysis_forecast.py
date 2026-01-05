@@ -211,7 +211,7 @@ def create_btc_forecast_sheet(wb, btc_monthly):
     ]
     
     for i, insight in enumerate(insights, 1):
-        ws[f'A{row_num+2+i}'] = f'• {insight}'
+        ws[f'A{row_num+2+i}'] = f'  - {insight}'
         ws.merge_cells(f'A{row_num+2+i}:F{row_num+2+i}')
     
     # Set column widths
@@ -328,7 +328,7 @@ def create_gold_forecast_sheet(wb, gold_brics_monthly):
     ]
     
     for i, insight in enumerate(insights, 1):
-        ws[f'A{row_num+2+i}'] = f'• {insight}'
+        ws[f'A{row_num+2+i}'] = f'  - {insight}'
         ws.merge_cells(f'A{row_num+2+i}:G{row_num+2+i}')
     
     # Set column widths
@@ -446,7 +446,7 @@ def create_oil_forecast_sheet(wb, oil_brics_monthly):
     ]
     
     for i, insight in enumerate(insights, 1):
-        ws[f'A{row_num+2+i}'] = f'• {insight}'
+        ws[f'A{row_num+2+i}'] = f'  - {insight}'
         ws.merge_cells(f'A{row_num+2+i}:G{row_num+2+i}')
     
     # Set column widths
@@ -499,21 +499,21 @@ def create_usd_dominance_sheet(wb):
         ('Based on 3-month moving average forecasts across BTC, Gold, and Oil:', ''),
         ('', ''),
         ('1. BTC Trading Volume Trends:', 'USD maintains 60-70% dominance in BTC trading volume'),
-        ('', '   • Forecast shows stable USD-BTC trading patterns through Q1 2026'),
-        ('', '   • Alternative currencies (EUR, KRW) show modest but not disruptive growth'),
+        ('', '     - Forecast shows stable USD-BTC trading patterns through Q1 2026'),
+        ('', '     - Alternative currencies (EUR, KRW) show modest but not disruptive growth'),
         ('', ''),
         ('2. BRICS Gold Accumulation:', 'Accelerating reserves signal USD hedging strategy'),
-        ('', '   • BRICS gold imports forecast to continue rising (+8-12% next 3 months)'),
-        ('', '   • Central bank diversification away from USD assets is evident'),
+        ('', '     - BRICS gold imports forecast to continue rising (+8-12% next 3 months)'),
+        ('', '     - Central bank diversification away from USD assets is evident'),
         ('', ''),
         ('3. BRICS Oil Imports:', 'Energy trade increasingly settling outside USD'),
-        ('', '   • China/India petroyuan settlements growing but still minority share'),
-        ('', '   • Forecast shows continued high oil demand from BRICS nations'),
+        ('', '     - China/India petroyuan settlements growing but still minority share'),
+        ('', '     - Forecast shows continued high oil demand from BRICS nations'),
         ('', ''),
         ('CONCLUSION:', 'USD will likely remain dominant through 2027, but its monopoly is weakening'),
-        ('', '   • Short-term (2025-2027): USD dominance continues but erodes 5-10%'),
-        ('', '   • Medium-term (2027-2030): Multi-currency system emerges with USD at ~50-60%'),
-        ('', '   • Key trigger: Successful BRICS payment system launch could accelerate shift'),
+        ('', '     - Short-term (2025-2027): USD dominance continues but erodes 5-10%'),
+        ('', '     - Medium-term (2027-2030): Multi-currency system emerges with USD at ~50-60%'),
+        ('', '     - Key trigger: Successful BRICS payment system launch could accelerate shift'),
     ]
     
     row = 5
@@ -548,24 +548,24 @@ def create_usd_dominance_sheet(wb):
     row += 1
     methodology = [
         'Technique: 3-Month Simple Moving Average (SMA)',
-        '• Takes average of last 3 months to smooth volatility and identify trends',
-        '• Formula: Forecast = (Month-3 + Month-2 + Month-1) / 3',
-        '• Assumes recent patterns continue in near term',
+        '  - Takes average of last 3 months to smooth volatility and identify trends',
+        '  - Formula: Forecast = (Month-3 + Month-2 + Month-1) / 3',
+        '  - Assumes recent patterns continue in near term',
         '',
         'Data Sources:',
-        '• Bitcoin: Trading volume by currency (2020-2025) from Bitcoinity.org',
-        '• Gold: UN Comtrade import data for BRICS vs US/EU (2021-2025)',
-        '• Oil: UN Comtrade crude oil import data for BRICS vs US/EU (2021-2025)',
+        '  - Bitcoin: Trading volume by currency (2020-2025) from Bitcoinity.org',
+        '  - Gold: UN Comtrade import data for BRICS vs US/EU (2021-2025)',
+        '  - Oil: UN Comtrade crude oil import data for BRICS vs US/EU (2021-2025)',
         '',
         'Limitations:',
-        '• Simple moving average cannot predict sudden shocks or policy changes',
-        '• Does not account for geopolitical events (wars, sanctions, BRICS expansion)',
-        '• Linear extrapolation may miss accelerating trends or reversals',
+        '  - Simple moving average cannot predict sudden shocks or policy changes',
+        '  - Does not account for geopolitical events (wars, sanctions, BRICS expansion)',
+        '  - Linear extrapolation may miss accelerating trends or reversals',
     ]
     
     for point in methodology:
         ws[f'A{row}'] = point
-        if point and not point.startswith('•'):
+        if point and not point.startswith('  -'):
             ws[f'A{row}'].font = Font(bold=True, size=10)
         ws.merge_cells(f'A{row}:F{row}')
         row += 1
@@ -627,16 +627,16 @@ def create_usd_dominance_sheet(wb):
         'Probability: 75% - USD REMAINS DOMINANT but with REDUCED POWER',
         '',
         'Supporting Evidence:',
-        '✓ BTC forecasts show USD maintaining crypto trading leadership',
-        '✓ No viable alternative single currency emerges by 2027',
-        '✓ US economic fundamentals still strongest globally',
-        '✓ SWIFT infrastructure deeply embedded in global trade',
+        ' BTC forecasts show USD maintaining crypto trading leadership',
+        ' No viable alternative single currency emerges by 2027',
+        ' US economic fundamentals still strongest globally',
+        ' SWIFT infrastructure deeply embedded in global trade',
         '',
         'Concerning Trends:',
-        '⚠ BRICS gold accumulation accelerating (hedging behavior)',
-        '⚠ Alternative payment systems gaining traction',
-        '⚠ Energy markets diversifying settlement currencies',
-        '⚠ US fiscal position deteriorating (debt concerns)',
+        '- BRICS gold accumulation accelerating (hedging behavior)',
+        '- Alternative payment systems gaining traction',
+        '- Energy markets diversifying settlement currencies',
+        '- US fiscal position deteriorating (debt concerns)',
         '',
         'Critical Timeline:',
         '2025-2026: Status quo holds, gradual USD erosion continues',
@@ -644,18 +644,18 @@ def create_usd_dominance_sheet(wb):
         '2027-2030: Multi-polar currency system likely emerges',
         '',
         'Recommendation for Portfolio Managers:',
-        '• Maintain USD exposure but hedge with 15-25% in gold and 5-10% in alternative currencies',
-        '• Monitor BRICS payment system development closely',
-        '• Diversify across commodities (gold, oil) to hedge currency risk',
+        '  - Maintain USD exposure but hedge with 15-25% in gold and 5-10% in alternative currencies',
+        '  - Monitor BRICS payment system development closely',
+        '  - Diversify across commodities (gold, oil) to hedge currency risk',
     ]
     
     for point in assessment:
         ws[f'A{row}'] = point
         if 'Probability' in point:
             ws[f'A{row}'].font = Font(bold=True, size=11, color='C00000')
-        elif point.startswith('✓'):
+        elif point.startswith(''):
             ws[f'A{row}'].font = Font(size=10, color='006100')
-        elif point.startswith('⚠'):
+        elif point.startswith('-'):
             ws[f'A{row}'].font = Font(size=10, color='9C0006')
         elif any(x in point for x in ['Supporting', 'Concerning', 'Critical', 
                                       'Recommendation']):
@@ -704,9 +704,9 @@ def main():
         oil_brics_monthly, oil_us_eu_monthly = load_and_process_data(
             btc_path, gold_path, oil_path)
     
-    print(f"  ✓ BTC data: {len(btc_monthly)} months")
-    print(f"  ✓ Gold BRICS data: {len(gold_brics_monthly)} months")
-    print(f"  ✓ Oil BRICS data: {len(oil_brics_monthly)} months")
+    print(f"   BTC data: {len(btc_monthly)} months")
+    print(f"   Gold BRICS data: {len(gold_brics_monthly)} months")
+    print(f"   Oil BRICS data: {len(oil_brics_monthly)} months")
     
     # Create workbook
     print("\n[2/5] Creating Excel workbook...")
@@ -715,20 +715,20 @@ def main():
     
     print("\n[3/5] Generating forecast sheets...")
     create_usd_dominance_sheet(wb)
-    print("  ✓ USD Dominance Analysis sheet created")
+    print("   USD Dominance Analysis sheet created")
     
     create_btc_forecast_sheet(wb, btc_monthly)
-    print("  ✓ BTC Forecast sheet created")
+    print("   BTC Forecast sheet created")
     
     create_gold_forecast_sheet(wb, gold_brics_monthly)
-    print("  ✓ Gold BRICS Forecast sheet created")
+    print("   Gold BRICS Forecast sheet created")
     
     create_oil_forecast_sheet(wb, oil_brics_monthly)
-    print("  ✓ Oil BRICS Forecast sheet created")
+    print("   Oil BRICS Forecast sheet created")
     
     print("\n[4/5] Saving workbook...")
     wb.save(output_path)
-    print(f"  ✓ Workbook saved: {output_path}")
+    print(f"   Workbook saved: {output_path}")
     
     print("\n[5/5] Formula recalculation...")
     print("  ! Run: python recalc.py Predictive_Analysis_Forecasts.xlsx")
@@ -743,10 +743,10 @@ def main():
     print("  3. Gold_BRICS_Forecast - BRICS gold import forecast")
     print("  4. Oil_BRICS_Forecast - BRICS crude oil import forecast")
     print("\nAll sheets include:")
-    print("  • 24 months of historical data")
-    print("  • 3-month moving averages")
-    print("  • 3-month ahead forecasts")
-    print("  • Key insights and analysis")
+    print("    - 24 months of historical data")
+    print("    - 3-month moving averages")
+    print("    - 3-month ahead forecasts")
+    print("    - Key insights and analysis")
     print("="*70)
 
 

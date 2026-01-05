@@ -5,7 +5,7 @@
 **Institution:** University of Europe & Avron Global Consultancy Initiative  
 **Semester:** Winter 2025
 
-## 📊 Project Overview
+## Project Overview
 
 This project implements **Section D: Predictive Analysis** of the case study "Understanding Global Economic Signals Using Real-World Data." The analysis uses 3-month moving average forecasting to predict future trends in:
 
@@ -17,7 +17,7 @@ This project implements **Section D: Predictive Analysis** of the case study "Un
 
 > **"Will USD still remain the dominant currency in the world post-July 2027?"**
 
-## 📁 Repository Structure
+## Repository Structure
 
 ```
 .
@@ -35,7 +35,7 @@ This project implements **Section D: Predictive Analysis** of the case study "Un
     └── Oil_TradeData_Cleaned.csv
 ```
 
-## 🎯 Key Features
+## Key Features
 
 ### 1. **USD Dominance Analysis**
 - Executive summary with probability assessment (75% USD remains dominant but weakened)
@@ -61,7 +61,7 @@ This project implements **Section D: Predictive Analysis** of the case study "Un
 - Alternative settlement currency analysis
 - Economic growth indicators
 
-## 🛠️ Installation & Setup
+## Installation & Setup
 
 ### Prerequisites
 - Python 3.8+
@@ -88,7 +88,7 @@ sudo apt-get install libreoffice
 brew install --cask libreoffice
 ```
 
-## 📊 Data Sources
+## Data Sources
 
 1. **Bitcoin Trading Volume**
    - Source: [Bitcoinity.org](https://data.bitcoinity.org/markets/volume/30d?c=e&t=b)
@@ -105,7 +105,7 @@ brew install --cask libreoffice
    - Countries: BRICS vs US/EU
    - Period: January 2021 - October 2025
 
-## 📈 Visualizations
+## Visualizations
 
 The analysis includes **5 professional charts** visualizing forecasts:
 
@@ -122,7 +122,7 @@ All charts include:
 
 See [CHARTS_GUIDE.md](CHARTS_GUIDE.md) for detailed chart documentation.
 
-## 🚀 Usage
+## Usage
 
 ### Basic Usage
 
@@ -176,7 +176,7 @@ Predictive_Analysis_Forecasts.xlsx
     └── Energy security insights
 ```
 
-## 📈 Methodology
+## Methodology
 
 ### 3-Month Simple Moving Average (SMA)
 
@@ -200,17 +200,17 @@ Forecast(t+1) = [Actual(t) + Actual(t-1) + Actual(t-2)] / 3
 
 ```
 Historical Data (24 months)
-    ↓
+
 3-Month Moving Average Calculation
-    ↓
+
 Trend Identification
-    ↓
+
 3-Month Ahead Forecast
-    ↓
+
 Insights & Interpretation
 ```
 
-## 🔍 Key Findings
+## Key Findings
 
 ### BTC Trading Volume
 - **Current:** USD maintains 60-70% dominance in BTC trading
@@ -236,7 +236,7 @@ Insights & Interpretation
 - **2027:** BRICS payment system launch (inflection point)
 - **2027-2030:** Multi-polar currency system emerges (USD at 50-60%)
 
-## 💡 Investment Implications
+## Investment Implications
 
 ### Portfolio Recommendations
 1. Maintain USD exposure but hedge with 15-25% in gold
@@ -250,7 +250,7 @@ Insights & Interpretation
 - Geopolitical shocks (wars, sanctions)
 - Energy market restructuring
 
-## 📝 Code Structure
+## Code Structure
 
 ### Main Functions
 
@@ -276,7 +276,7 @@ for i in range(1, 4):  # Change 4 to desired months + 1
 btc_data = btc_monthly.sort_values('Date').tail(24)  # Change 24
 ```
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
@@ -286,11 +286,11 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## 📄 License
+## License
 
 This project is part of an academic case study for educational purposes.
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - **University of Europe** - Academic supervision
 - **Avron Global Consultancy** - Industry partnership
@@ -299,13 +299,13 @@ This project is part of an academic case study for educational purposes.
 - **UN Comtrade** - Trade data provision
 - **Bitcoinity.org** - Cryptocurrency data
 
-## 📞 Contact
+## Contact
 
 [Your Name] - [your.email@example.com]
 
 Project Link: [https://github.com/yourusername/predictive-analysis-forecasts](https://github.com/yourusername/predictive-analysis-forecasts)
 
-## 📚 References
+## References
 
 1. UN Comtrade Plus. (2025). *International Trade Statistics*. https://comtradeplus.un.org/
 2. Bitcoinity.org. (2025). *Bitcoin Trading Volume Data*. https://data.bitcoinity.org/

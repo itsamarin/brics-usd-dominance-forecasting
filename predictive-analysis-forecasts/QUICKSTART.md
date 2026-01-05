@@ -2,7 +2,7 @@
 
 Get your predictive analysis up and running in **5 minutes**!
 
-## ⚡ Fast Track (For Experienced Users)
+##  Fast Track (For Experienced Users)
 
 ```bash
 # 1. Clone repository
@@ -26,7 +26,7 @@ python add_charts_to_forecasts.py
 # 5. Done! Open Predictive_Analysis_Forecasts_with_Charts.xlsx
 ```
 
-## 📋 Step-by-Step (For Beginners)
+##  Step-by-Step (For Beginners)
 
 ### 1. Download This Repository
 
@@ -37,7 +37,7 @@ cd predictive-analysis-forecasts
 ```
 
 **Option B: Download ZIP**
-1. Click green "Code" button → "Download ZIP"
+1. Click green "Code" button  "Download ZIP"
 2. Extract to your Documents folder
 3. Open terminal/command prompt in that folder
 
@@ -111,9 +111,9 @@ SECTION D: PREDICTIVE ANALYSIS - 3-Month Moving Average Forecasts
 ======================================================================
 
 [1/5] Loading and processing data...
-  ✓ BTC data: 61 months
-  ✓ Gold BRICS data: 58 months
-  ✓ Oil BRICS data: 58 months
+   BTC data: 61 months
+   Gold BRICS data: 58 months
+   Oil BRICS data: 58 months
 ...
 SUCCESS! Predictive analysis workbook generated.
 ```
@@ -131,7 +131,7 @@ open Predictive_Analysis_Forecasts_with_Charts.xlsx
 libreoffice Predictive_Analysis_Forecasts_with_Charts.xlsx
 ```
 
-## ✅ What You'll Get
+##  What You'll Get
 
 An Excel file with **4 sheets** and **5 professional charts**:
 
@@ -140,14 +140,14 @@ An Excel file with **4 sheets** and **5 professional charts**:
 3. **Gold_BRICS_Forecast** - Gold forecasts with 2 charts
 4. **Oil_BRICS_Forecast** - Oil forecasts with 2 charts
 
-## 🎯 Next Steps
+##  Next Steps
 
 1. **Review the analysis** - Check USD dominance assessment
 2. **Customize if needed** - See USAGE.md for modifications
 3. **Share your work** - Export to PDF or push to GitHub
 4. **Add to your report** - Use for Section D submission
 
-## 🆘 Troubleshooting
+##  Troubleshooting
 
 **"No module named 'pandas'"**
 ```bash
@@ -174,30 +174,30 @@ python3 predictive_analysis_forecast.py
 # If needed, install LibreOffice: sudo apt install libreoffice
 ```
 
-## 📚 More Information
+##  More Information
 
 - **Detailed Setup**: See [SETUP_GUIDE.md](SETUP_GUIDE.md)
 - **Usage Examples**: See [USAGE.md](USAGE.md)
 - **Chart Guide**: See [CHARTS_GUIDE.md](CHARTS_GUIDE.md)
 - **Contributing**: See [CONTRIBUTING.md](CONTRIBUTING.md)
 
-## 💡 Tips
+##  Tips
 
 - Run in virtual environment to avoid package conflicts
 - Keep CSV files in same folder as scripts
 - Use Excel 2016+ or LibreOffice for best compatibility
 - Save your customizations before re-running scripts
 
-## 🎓 For Your Assignment
+##  For Your Assignment
 
 This completes **Section D: Predictive Analysis** of your case study:
-- ✅ 3-month moving average forecasts
-- ✅ BTC, Gold, and Oil analysis
-- ✅ USD dominance assessment
-- ✅ Professional visualizations
-- ✅ Investment recommendations
+-  3-month moving average forecasts
+-  BTC, Gold, and Oil analysis
+-  USD dominance assessment
+-  Professional visualizations
+-  Investment recommendations
 
-Ready to submit! 🚀
+Ready to submit! 
 
 ---
 
@@ -206,4 +206,4 @@ Ready to submit! 🚀
 **Prerequisites:** Python 3.8+, CSV data files  
 **Output:** Professional Excel report with charts
 
-Happy analyzing! 📊
+Happy analyzing! 

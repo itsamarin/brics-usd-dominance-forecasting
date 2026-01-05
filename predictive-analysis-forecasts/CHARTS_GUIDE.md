@@ -13,9 +13,9 @@ The predictive analysis workbook includes **5 professional charts** that visuali
 **Chart Type:** Multi-series Line Chart
 
 **Data Visualized:**
-- 📊 **Blue Line**: Actual Bitcoin USD trading volume (historical)
-- 📊 **Green Line**: 3-month moving average (smoothed trend)
-- 📊 **Red Dashed Line**: 3-month forecast (predicted values)
+-  **Blue Line**: Actual Bitcoin USD trading volume (historical)
+-  **Green Line**: 3-month moving average (smoothed trend)
+-  **Red Dashed Line**: 3-month forecast (predicted values)
 
 **Purpose:** Shows Bitcoin trading volume trends and helps identify whether USD dominance in crypto markets is stable or declining.
 
@@ -33,8 +33,8 @@ The predictive analysis workbook includes **5 professional charts** that visuali
 **Chart Type:** Line Chart
 
 **Data Visualized:**
-- 📊 **Gold Line**: Actual BRICS gold imports in kg (historical)
-- 📊 **Red Dashed Line**: 3-month MA forecast (predicted quantities)
+-  **Gold Line**: Actual BRICS gold imports in kg (historical)
+-  **Red Dashed Line**: 3-month MA forecast (predicted quantities)
 
 **Purpose:** Tracks central bank gold accumulation by BRICS nations as a hedge against USD.
 
@@ -52,8 +52,8 @@ The predictive analysis workbook includes **5 professional charts** that visuali
 **Chart Type:** Line Chart
 
 **Data Visualized:**
-- 📊 **Gold Line**: Actual BRICS gold import value in USD (historical)
-- 📊 **Red Dashed Line**: 3-month MA forecast (predicted values)
+-  **Gold Line**: Actual BRICS gold import value in USD (historical)
+-  **Red Dashed Line**: 3-month MA forecast (predicted values)
 
 **Purpose:** Shows the monetary value of gold accumulation and investment scale.
 
@@ -71,8 +71,8 @@ The predictive analysis workbook includes **5 professional charts** that visuali
 **Chart Type:** Line Chart
 
 **Data Visualized:**
-- 📊 **Black Line**: Actual BRICS crude oil imports in kg (historical)
-- 📊 **Red Dashed Line**: 3-month MA forecast (predicted quantities)
+-  **Black Line**: Actual BRICS crude oil imports in kg (historical)
+-  **Red Dashed Line**: 3-month MA forecast (predicted quantities)
 
 **Purpose:** Tracks energy security and consumption patterns in BRICS economies.
 
@@ -90,8 +90,8 @@ The predictive analysis workbook includes **5 professional charts** that visuali
 **Chart Type:** Line Chart
 
 **Data Visualized:**
-- 📊 **Black Line**: Actual BRICS crude oil import value in USD (historical)
-- 📊 **Red Dashed Line**: 3-month MA forecast (predicted values)
+-  **Black Line**: Actual BRICS crude oil import value in USD (historical)
+-  **Red Dashed Line**: 3-month MA forecast (predicted values)
 
 **Purpose:** Shows energy expenditure and potential for non-USD settlements.
 
@@ -136,7 +136,7 @@ If scripts fail, create charts manually:
 
 1. Open Excel file
 2. Select data range (e.g., C6:C30 for actuals)
-3. Insert → Chart → Line Chart
+3. Insert  Chart  Line Chart
 4. Add additional series (MA, Forecast)
 5. Format lines (colors, dash styles)
 6. Add titles and axis labels
@@ -291,7 +291,7 @@ chart = BarChart()
 3. Chart remains editable
 
 **PDF:**
-1. File → Save As → PDF
+1. File  Save As  PDF
 2. Charts embedded in PDF
 3. High-quality printing
 
@@ -391,17 +391,17 @@ plt.show()
 5. Oil BRICS Value (1 chart)
 
 **All charts include:**
-- ✅ Historical actual data
-- ✅ 3-month moving averages
-- ✅ 3-month forecasts
-- ✅ Professional styling
-- ✅ Clear labels and titles
+-  Historical actual data
+-  3-month moving averages
+-  3-month forecasts
+-  Professional styling
+-  Clear labels and titles
 
 **Use these charts to:**
-- 📊 Visualize trends and patterns
-- 📈 Communicate forecasts clearly
+-  Visualize trends and patterns
+-  Communicate forecasts clearly
 - 📉 Identify market shifts
-- 🎯 Support investment decisions
+-  Support investment decisions
 
 ---
 

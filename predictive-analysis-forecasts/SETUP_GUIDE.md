@@ -1,6 +1,6 @@
 # Complete Setup Guide - Predictive Analysis Forecasts
 
-## 📦 What You'll Need
+## What You'll Need
 
 - Python 3.8 or higher
 - Git (for version control)
@@ -8,7 +8,7 @@
 - Text editor or IDE (VS Code, PyCharm, etc.)
 - Your cleaned data files (CSV format)
 
-## 🚀 Step-by-Step Setup
+## Step-by-Step Setup
 
 ### Step 1: Install Python
 
@@ -79,7 +79,7 @@ cd predictive-analysis-forecasts
 
 **Option B: Download ZIP**
 1. Go to GitHub repository page
-2. Click "Code" → "Download ZIP"
+2. Click "Code"  "Download ZIP"
 3. Extract to your desired location
 4. Open terminal/CMD in that folder
 
@@ -162,20 +162,20 @@ SECTION D: PREDICTIVE ANALYSIS - 3-Month Moving Average Forecasts
 ======================================================================
 
 [1/5] Loading and processing data...
-  ✓ BTC data: 61 months
-  ✓ Gold BRICS data: 58 months
-  ✓ Oil BRICS data: 58 months
+  BTC data: 61 months
+  Gold BRICS data: 58 months
+  Oil BRICS data: 58 months
 
 [2/5] Creating Excel workbook...
 
 [3/5] Generating forecast sheets...
-  ✓ USD Dominance Analysis sheet created
-  ✓ BTC Forecast sheet created
-  ✓ Gold BRICS Forecast sheet created
-  ✓ Oil BRICS Forecast sheet created
+  USD Dominance Analysis sheet created
+  BTC Forecast sheet created
+  Gold BRICS Forecast sheet created
+  Oil BRICS Forecast sheet created
 
 [4/5] Saving workbook...
-  ✓ Workbook saved: Predictive_Analysis_Forecasts.xlsx
+  Workbook saved: Predictive_Analysis_Forecasts.xlsx
 
 [5/5] Formula recalculation...
   ! Run: python recalc.py Predictive_Analysis_Forecasts.xlsx
@@ -214,7 +214,7 @@ open Predictive_Analysis_Forecasts.xlsx
 libreoffice Predictive_Analysis_Forecasts.xlsx
 ```
 
-## ✅ Verification Checklist
+## Verification Checklist
 
 - [ ] Python 3.8+ installed
 - [ ] Git installed (optional but recommended)
@@ -227,7 +227,7 @@ libreoffice Predictive_Analysis_Forecasts.xlsx
 - [ ] Formulas recalculated
 - [ ] All sheets visible in Excel
 
-## 🔧 Troubleshooting
+## Troubleshooting
 
 ### Problem: "python: command not found"
 
@@ -284,7 +284,7 @@ chmod +x predictive_analysis_forecast.py
 2. Check file isn't corrupted: `file Predictive_Analysis_Forecasts.xlsx`
 3. Re-run script to regenerate
 
-## 📊 What the Output Contains
+## What the Output Contains
 
 Your Excel file will have **4 sheets**:
 
@@ -308,7 +308,7 @@ Your Excel file will have **4 sheets**:
 - Quantity (kg) and Value (USD)
 - 3-month forecasts
 
-## 🎓 Next Steps
+## Next Steps
 
 1. **Review the Analysis:**
    - Read the USD Dominance Analysis summary
@@ -316,7 +316,7 @@ Your Excel file will have **4 sheets**:
    - Review insights on each sheet
 
 2. **Customize (Optional):**
-   - Modify forecast horizon (3 → 6 months)
+   - Modify forecast horizon (3  6 months)
    - Change moving average window
    - Add additional countries/currencies
 
@@ -342,7 +342,7 @@ Your Excel file will have **4 sheets**:
    git push -u origin main
    ```
 
-## 📞 Getting Help
+## Getting Help
 
 If you're stuck:
 
@@ -352,17 +352,17 @@ If you're stuck:
 4. Create an issue on GitHub
 5. Contact project maintainer
 
-## 🎉 Congratulations!
+## Congratulations!
 
 You've successfully set up and run the predictive analysis! You now have:
 
-- ✅ Working Python environment
-- ✅ All dependencies installed
-- ✅ Analysis running successfully
-- ✅ Professional Excel output
-- ✅ 3-month forecasts for BTC, Gold, and Oil
+- Working Python environment
+- All dependencies installed
+- Analysis running successfully
+- Professional Excel output
+- 3-month forecasts for BTC, Gold, and Oil
 
-Your contribution to Section D is complete! 🚀
+Your contribution to Section D is complete!
 
 ---
 

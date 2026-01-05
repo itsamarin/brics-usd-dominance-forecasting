@@ -55,7 +55,7 @@ def add_btc_chart(ws):
     
     # Add chart to sheet
     ws.add_chart(chart, "H5")
-    print("  ✓ BTC chart added")
+    print("   BTC chart added")
 
 
 def add_gold_charts(ws):
@@ -115,7 +115,7 @@ def add_gold_charts(ws):
     
     ws.add_chart(chart_val, "I25")
     
-    print("  ✓ Gold charts added (Quantity & Value)")
+    print("   Gold charts added (Quantity & Value)")
 
 
 def add_oil_charts(ws):
@@ -175,7 +175,7 @@ def add_oil_charts(ws):
     
     ws.add_chart(chart_val, "I25")
     
-    print("  ✓ Oil charts added (Quantity & Value)")
+    print("   Oil charts added (Quantity & Value)")
 
 
 def main(input_file='Predictive_Analysis_Forecasts.xlsx', 
@@ -195,7 +195,7 @@ def main(input_file='Predictive_Analysis_Forecasts.xlsx',
     try:
         wb = load_workbook(input_file)
     except FileNotFoundError:
-        print(f"\n❌ Error: File '{input_file}' not found!")
+        print(f"\nX Error: File '{input_file}' not found!")
         print("Please run 'python predictive_analysis_forecast.py' first.")
         sys.exit(1)
     
@@ -205,23 +205,23 @@ def main(input_file='Predictive_Analysis_Forecasts.xlsx',
     if 'BTC_Forecast' in wb.sheetnames:
         add_btc_chart(wb['BTC_Forecast'])
     else:
-        print("  ⚠ BTC_Forecast sheet not found, skipping")
+        print("  - BTC_Forecast sheet not found, skipping")
     
     # Add Gold charts
     if 'Gold_BRICS_Forecast' in wb.sheetnames:
         add_gold_charts(wb['Gold_BRICS_Forecast'])
     else:
-        print("  ⚠ Gold_BRICS_Forecast sheet not found, skipping")
+        print("  - Gold_BRICS_Forecast sheet not found, skipping")
     
     # Add Oil charts
     if 'Oil_BRICS_Forecast' in wb.sheetnames:
         add_oil_charts(wb['Oil_BRICS_Forecast'])
     else:
-        print("  ⚠ Oil_BRICS_Forecast sheet not found, skipping")
+        print("  - Oil_BRICS_Forecast sheet not found, skipping")
     
     print("\n[3/4] Saving workbook with charts...")
     wb.save(output_file)
-    print(f"  ✓ Saved: {output_file}")
+    print(f"   Saved: {output_file}")
     
     print("\n[4/4] Complete!")
     print("="*70)
@@ -229,9 +229,9 @@ def main(input_file='Predictive_Analysis_Forecasts.xlsx',
     print("="*70)
     print(f"\nOutput file: {output_file}")
     print("\nCharts included:")
-    print("  • BTC_Forecast: 1 line chart (Actual, MA, Forecast)")
-    print("  • Gold_BRICS_Forecast: 2 line charts (Quantity & Value)")
-    print("  • Oil_BRICS_Forecast: 2 line charts (Quantity & Value)")
+    print("    - BTC_Forecast: 1 line chart (Actual, MA, Forecast)")
+    print("    - Gold_BRICS_Forecast: 2 line charts (Quantity & Value)")
+    print("    - Oil_BRICS_Forecast: 2 line charts (Quantity & Value)")
     print("\nTotal: 5 professional charts with forecast visualization")
     print("="*70)
 

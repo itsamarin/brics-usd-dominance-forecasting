@@ -145,31 +145,31 @@ refDate,reporterISO,reporterDesc,flowDesc,partnerDesc,cmdCode,cmdDesc,qtyUnitAbb
 
 Before running the analysis, verify:
 
-**✓ File Names Match Exactly**
+** File Names Match Exactly**
 ```
 Btc_5y_Cleaned.csv          (case-sensitive)
 Gold_TradeData_Cleaned.csv  (case-sensitive)
 Oil_TradeData_Cleaned.csv   (case-sensitive)
 ```
 
-**✓ Required Columns Present**
+** Required Columns Present**
 - All column names match exactly (case-sensitive)
 - No extra spaces in column names
 - No missing required columns
 
-**✓ Data Types Correct**
+** Data Types Correct**
 - Dates in YYYY-MM-DD format (or parseable by pandas)
 - Numeric values are numbers (not text)
 - No currency symbols in numeric columns ($, €, etc.)
 - Booleans are True/False (not 1/0 or Yes/No)
 
-**✓ No Missing Critical Data**
+** No Missing Critical Data**
 - No blank/null values in key columns (refDate, qty, primaryValue)
 - At least 12 months of data
 - BRICS countries present in Gold/Oil data
 - USD currency present in BTC data
 
-**✓ Reasonable Values**
+** Reasonable Values**
 - No negative quantities
 - No zero or negative values in primaryValue
 - Dates within expected range (2020-2025)

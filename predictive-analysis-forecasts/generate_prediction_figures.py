@@ -207,9 +207,9 @@ def plot_btc_forecast(btc_monthly, output_filename='btc_forecast.pdf'):
     # Add insights box
     insights_text = (
         'Key Insights:\n'
-        '• USD maintains 60-70% dominance in BTC trading\n'
-        '• Forecast assumes continuation of recent trading patterns\n'
-        '• Deviations may signal shifts in BTC market dynamics'
+        '  - USD maintains 60-70% dominance in BTC trading\n'
+        '  - Forecast assumes continuation of recent trading patterns\n'
+        '  - Deviations may signal shifts in BTC market dynamics'
     )
     ax.text(0.02, 0.98, insights_text, transform=ax.transAxes,
             fontsize=9, verticalalignment='top',
@@ -219,7 +219,7 @@ def plot_btc_forecast(btc_monthly, output_filename='btc_forecast.pdf'):
     plt.savefig(output_path, format='pdf', dpi=300, bbox_inches='tight')
     plt.close()
 
-    print(f"  ✓ Created: {output_path}")
+    print(f"   Created: {output_path}")
 
 
 def plot_gold_forecast(gold_brics_monthly, output_filename='gold_brics_forecast.pdf'):
@@ -304,9 +304,9 @@ def plot_gold_forecast(gold_brics_monthly, output_filename='gold_brics_forecast.
     # Add insights box
     insights_text = (
         'Key Insights:\n'
-        '• BRICS gold imports rising +8-12% (forecast period)\n'
-        '• Central bank diversification away from USD assets\n'
-        '• Gold serves as hedge against currency risk'
+        '  - BRICS gold imports rising +8-12% (forecast period)\n'
+        '  - Central bank diversification away from USD assets\n'
+        '  - Gold serves as hedge against currency risk'
     )
     ax2.text(0.02, 0.98, insights_text, transform=ax2.transAxes,
              fontsize=9, verticalalignment='top',
@@ -316,7 +316,7 @@ def plot_gold_forecast(gold_brics_monthly, output_filename='gold_brics_forecast.
     plt.savefig(output_path, format='pdf', dpi=300, bbox_inches='tight')
     plt.close()
 
-    print(f"  ✓ Created: {output_path}")
+    print(f"   Created: {output_path}")
 
 
 def plot_oil_forecast(oil_brics_monthly, output_filename='oil_brics_forecast.pdf'):
@@ -401,9 +401,9 @@ def plot_oil_forecast(oil_brics_monthly, output_filename='oil_brics_forecast.pdf
     # Add insights box
     insights_text = (
         'Key Insights:\n'
-        '• BRICS oil imports growing +5% YoY\n'
-        '• China/India drive majority of demand\n'
-        '• Shift towards non-USD settlements (petroyuan)'
+        '  - BRICS oil imports growing +5% YoY\n'
+        '  - China/India drive majority of demand\n'
+        '  - Shift towards non-USD settlements (petroyuan)'
     )
     ax2.text(0.02, 0.98, insights_text, transform=ax2.transAxes,
              fontsize=9, verticalalignment='top',
@@ -413,7 +413,7 @@ def plot_oil_forecast(oil_brics_monthly, output_filename='oil_brics_forecast.pdf
     plt.savefig(output_path, format='pdf', dpi=300, bbox_inches='tight')
     plt.close()
 
-    print(f"  ✓ Created: {output_path}")
+    print(f"   Created: {output_path}")
 
 
 def plot_reserves_time_series(btc_monthly, gold_brics_monthly, oil_brics_monthly):
@@ -456,7 +456,7 @@ def plot_reserves_time_series(btc_monthly, gold_brics_monthly, oil_brics_monthly
     output_path = os.path.join(FIGURES_DIR, 'btc_reserves_timeseries.pdf')
     plt.savefig(output_path, format='pdf', dpi=300, bbox_inches='tight')
     plt.close()
-    print(f"  ✓ Created: {output_path}")
+    print(f"   Created: {output_path}")
 
     # === GOLD RESERVES TIME SERIES ===
     fig, ax = plt.subplots(figsize=(14, 7))
@@ -493,7 +493,7 @@ def plot_reserves_time_series(btc_monthly, gold_brics_monthly, oil_brics_monthly
     output_path = os.path.join(FIGURES_DIR, 'gold_reserves_timeseries.pdf')
     plt.savefig(output_path, format='pdf', dpi=300, bbox_inches='tight')
     plt.close()
-    print(f"  ✓ Created: {output_path}")
+    print(f"   Created: {output_path}")
 
     # === OIL RESERVES TIME SERIES ===
     fig, ax = plt.subplots(figsize=(14, 7))
@@ -530,7 +530,7 @@ def plot_reserves_time_series(btc_monthly, gold_brics_monthly, oil_brics_monthly
     output_path = os.path.join(FIGURES_DIR, 'oil_reserves_timeseries.pdf')
     plt.savefig(output_path, format='pdf', dpi=300, bbox_inches='tight')
     plt.close()
-    print(f"  ✓ Created: {output_path}")
+    print(f"   Created: {output_path}")
 
 
 def plot_comparative_chart(btc_monthly, gold_brics_monthly, oil_brics_monthly):
@@ -586,11 +586,11 @@ def plot_comparative_chart(btc_monthly, gold_brics_monthly, oil_brics_monthly):
     # Add insights box
     insights_text = (
         'Key Insights:\n'
-        '• All metrics normalized to 0-100 scale for comparison\n'
-        '• Shows relative trends and patterns across commodities\n'
-        '• Gold accumulation indicates de-dollarization efforts\n'
-        '• Oil imports reflect energy security strategies\n'
-        '• BTC trading shows USD dominance in crypto markets'
+        '  - All metrics normalized to 0-100 scale for comparison\n'
+        '  - Shows relative trends and patterns across commodities\n'
+        '  - Gold accumulation indicates de-dollarization efforts\n'
+        '  - Oil imports reflect energy security strategies\n'
+        '  - BTC trading shows USD dominance in crypto markets'
     )
     ax.text(0.02, 0.98, insights_text, transform=ax.transAxes,
             fontsize=9, verticalalignment='top',
@@ -600,7 +600,7 @@ def plot_comparative_chart(btc_monthly, gold_brics_monthly, oil_brics_monthly):
     output_path = os.path.join(FIGURES_DIR, 'comparative_analysis.pdf')
     plt.savefig(output_path, format='pdf', dpi=300, bbox_inches='tight')
     plt.close()
-    print(f"  ✓ Created: {output_path}")
+    print(f"   Created: {output_path}")
 
 
 def plot_comparative_forecast(btc_monthly, gold_brics_monthly, oil_brics_monthly):
@@ -677,15 +677,15 @@ def plot_comparative_forecast(btc_monthly, gold_brics_monthly, oil_brics_monthly
     # Add insights box
     insights_text = (
         'Forecast Methodology:\n'
-        '• 3-Month Simple Moving Average (SMA)\n'
-        '• All values normalized to 0-100 scale\n'
-        '• Dashed lines show predicted trends\n'
-        '• Enables cross-commodity comparison\n'
+        '  - 3-Month Simple Moving Average (SMA)\n'
+        '  - All values normalized to 0-100 scale\n'
+        '  - Dashed lines show predicted trends\n'
+        '  - Enables cross-commodity comparison\n'
         '\n'
         'USD Dominance Indicators:\n'
-        '↑ BTC Trading: USD crypto dominance\n'
-        '↑ Gold Imports: De-dollarization effort\n'
-        '↑ Oil Imports: Energy security strategy'
+        '- BTC Trading: USD crypto dominance\n'
+        '- Gold Imports: De-dollarization effort\n'
+        '- Oil Imports: Energy security strategy'
     )
     ax.text(0.02, 0.98, insights_text, transform=ax.transAxes,
             fontsize=8.5, verticalalignment='top',
@@ -695,7 +695,7 @@ def plot_comparative_forecast(btc_monthly, gold_brics_monthly, oil_brics_monthly
     output_path = os.path.join(FIGURES_DIR, 'comparative_forecast.pdf')
     plt.savefig(output_path, format='pdf', dpi=300, bbox_inches='tight')
     plt.close()
-    print(f"  ✓ Created: {output_path}")
+    print(f"   Created: {output_path}")
 
 
 def create_combined_pdf(btc_monthly, gold_brics_monthly, oil_brics_monthly,
@@ -880,7 +880,7 @@ def create_combined_pdf(btc_monthly, gold_brics_monthly, oil_brics_monthly,
         d['Keywords'] = 'BRICS, USD, Forecasting, Bitcoin, Gold, Oil'
         d['CreationDate'] = datetime.now()
 
-    print(f"  ✓ Created: {output_path}")
+    print(f"   Created: {output_path}")
 
 
 def main():
@@ -900,9 +900,9 @@ def main():
     btc_monthly, gold_brics_monthly, oil_brics_monthly = load_and_process_data(
         btc_path, gold_path, oil_path)
 
-    print(f"  ✓ BTC data: {len(btc_monthly)} months")
-    print(f"  ✓ Gold BRICS data: {len(gold_brics_monthly)} months")
-    print(f"  ✓ Oil BRICS data: {len(oil_brics_monthly)} months")
+    print(f"   BTC data: {len(btc_monthly)} months")
+    print(f"   Gold BRICS data: {len(gold_brics_monthly)} months")
+    print(f"   Oil BRICS data: {len(oil_brics_monthly)} months")
 
     print("\n[2/9] Creating BTC forecast figure...")
     plot_btc_forecast(btc_monthly, 'btc_forecast.pdf')
@@ -948,10 +948,10 @@ def main():
     print("  9. all_predictions_combined.pdf - All forecasts in one PDF")
     print("\nTotal: 9 PDF files generated")
     print("\nAll figures include:")
-    print("  • Historical data (solid lines with markers)")
-    print("  • Statistical information (mean, std dev, trends)")
-    print("  • Professional formatting for publication")
-    print("  • High resolution (300 DPI) for printing")
+    print("    - Historical data (solid lines with markers)")
+    print("    - Statistical information (mean, std dev, trends)")
+    print("    - Professional formatting for publication")
+    print("    - High resolution (300 DPI) for printing")
     print("=" * 70)
 
 
