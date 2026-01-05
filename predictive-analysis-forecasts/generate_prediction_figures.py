@@ -23,11 +23,12 @@ Outputs (saved to ../figures/):
 
     Comparative Analysis:
     - comparative_analysis.pdf (all commodities normalized)
+    - comparative_forecast.pdf (all commodities with 3-month forecasts)
 
     Combined Document:
     - all_predictions_combined.pdf (all forecasts)
 
-Total: 8 PDF files with professional charts
+Total: 9 PDF files with professional charts
 """
 
 import pandas as pd
@@ -70,14 +71,14 @@ def load_and_process_data(btc_path, gold_path, oil_path):
     oil_df = pd.read_csv(oil_path)
 
     # Parse dates
-    btc_df['time'] = pd.to_datetime(btc_df['time'])
+    btc_df['Time'] = pd.to_datetime(btc_df['Time'])
     gold_df['refDate'] = pd.to_datetime(gold_df['refDate'])
     oil_df['refDate'] = pd.to_datetime(oil_df['refDate'])
 
     # === BTC ANALYSIS ===
-    btc_usd = btc_df[btc_df['currency'] == 'USD'].copy()
-    btc_usd['year_month'] = btc_usd['time'].dt.to_period('M')
-    btc_monthly = btc_usd.groupby('year_month')['trading_volume_btc'].sum().reset_index()
+    # Extract USD column and aggregate monthly
+    btc_df['year_month'] = btc_df['Time'].dt.to_period('M')
+    btc_monthly = btc_df.groupby('year_month')['USD'].sum().reset_index()
     btc_monthly['year_month'] = btc_monthly['year_month'].dt.to_timestamp()
     btc_monthly = btc_monthly.sort_values('year_month')
     btc_monthly.columns = ['Date', 'BTC_Volume']
@@ -607,6 +608,101 @@ def plot_comparative_chart(btc_monthly, gold_brics_monthly, oil_brics_monthly):
     print(f"  ✓ Created: {output_path}")
 
 
+def plot_comparative_forecast(btc_monthly, gold_brics_monthly, oil_brics_monthly):
+    """
+    Create a comparative forecast chart showing all 3 commodities with 3-month predictions.
+    All data normalized to 0-100 scale for comparison.
+    """
+    # Normalize function
+    def normalize(series):
+        return ((series - series.min()) / (series.max() - series.min())) * 100
+
+    # Get last 24 months for each commodity
+    btc_data = btc_monthly.tail(24).copy()
+    gold_data = gold_brics_monthly.tail(24).copy()
+    oil_data = oil_brics_monthly.tail(24).copy()
+
+    # Calculate forecasts
+    btc_forecast = calculate_3ma_forecast(btc_data, 'BTC_Volume', n_forecast=3)
+    gold_forecast = calculate_3ma_forecast(gold_data, 'BRICS_Gold_Qty_kg', n_forecast=3)
+    oil_forecast = calculate_3ma_forecast(oil_data, 'BRICS_Oil_Qty_kg', n_forecast=3)
+
+    # Normalize the actual and forecast data together
+    btc_forecast['BTC_Normalized'] = normalize(btc_forecast['BTC_Volume'].fillna(btc_forecast['Forecast']))
+    gold_forecast['Gold_Normalized'] = normalize(gold_forecast['BRICS_Gold_Qty_kg'].fillna(gold_forecast['Forecast']))
+    oil_forecast['Oil_Normalized'] = normalize(oil_forecast['BRICS_Oil_Qty_kg'].fillna(oil_forecast['Forecast']))
+
+    # Create the figure
+    fig, ax = plt.subplots(figsize=(16, 8))
+
+    # Plot actual data (solid lines)
+    btc_actual = btc_forecast[btc_forecast['BTC_Volume'].notna()]
+    gold_actual = gold_forecast[gold_forecast['BRICS_Gold_Qty_kg'].notna()]
+    oil_actual = oil_forecast[oil_forecast['BRICS_Oil_Qty_kg'].notna()]
+
+    ax.plot(btc_actual['Date'], btc_actual['BTC_Normalized'],
+            linewidth=2.5, marker='o', markersize=4,
+            color='#4472C4', label='Bitcoin USD Trading Volume (Actual)', alpha=0.8)
+    ax.plot(gold_actual['Date'], gold_actual['Gold_Normalized'],
+            linewidth=2.5, marker='s', markersize=4,
+            color='#FFC000', label='BRICS Gold Imports (Actual)', alpha=0.8)
+    ax.plot(oil_actual['Date'], oil_actual['Oil_Normalized'],
+            linewidth=2.5, marker='^', markersize=4,
+            color='#000000', label='BRICS Crude Oil Imports (Actual)', alpha=0.7)
+
+    # Plot forecast data (dashed lines)
+    btc_pred = btc_forecast[btc_forecast['Forecast'].notna()]
+    gold_pred = gold_forecast[gold_forecast['Forecast'].notna()]
+    oil_pred = oil_forecast[oil_forecast['Forecast'].notna()]
+
+    ax.plot(btc_pred['Date'], btc_pred['BTC_Normalized'],
+            linewidth=2.5, linestyle='--', marker='o', markersize=6,
+            color='#4472C4', label='Bitcoin Forecast (3-month SMA)', alpha=0.6)
+    ax.plot(gold_pred['Date'], gold_pred['Gold_Normalized'],
+            linewidth=2.5, linestyle='--', marker='s', markersize=6,
+            color='#FFC000', label='Gold Forecast (3-month SMA)', alpha=0.6)
+    ax.plot(oil_pred['Date'], oil_pred['Oil_Normalized'],
+            linewidth=2.5, linestyle='--', marker='^', markersize=6,
+            color='#000000', label='Oil Forecast (3-month SMA)', alpha=0.5)
+
+    # Formatting
+    ax.set_xlabel('Date', fontsize=12, fontweight='bold')
+    ax.set_ylabel('Normalized Index (0-100)', fontsize=12, fontweight='bold')
+    ax.set_title('Comparative Forecast Analysis: BTC, Gold, and Oil\n' +
+                 'Historical Trends + 3-Month Predictions (Normalized Scale)',
+                 fontsize=14, fontweight='bold', pad=20)
+
+    ax.xaxis.set_major_formatter(mdates.DateFormatter('%Y-%m'))
+    ax.xaxis.set_major_locator(mdates.MonthLocator(interval=2))
+    plt.xticks(rotation=45, ha='right')
+    ax.grid(True, alpha=0.3, linestyle='-', linewidth=0.5)
+    ax.set_axisbelow(True)
+    ax.legend(loc='best', framealpha=0.9, shadow=True, fontsize=9, ncol=2)
+
+    # Add insights box
+    insights_text = (
+        'Forecast Methodology:\n'
+        '• 3-Month Simple Moving Average (SMA)\n'
+        '• All values normalized to 0-100 scale\n'
+        '• Dashed lines show predicted trends\n'
+        '• Enables cross-commodity comparison\n'
+        '\n'
+        'USD Dominance Indicators:\n'
+        '↑ BTC Trading: USD crypto dominance\n'
+        '↑ Gold Imports: De-dollarization effort\n'
+        '↑ Oil Imports: Energy security strategy'
+    )
+    ax.text(0.02, 0.98, insights_text, transform=ax.transAxes,
+            fontsize=8.5, verticalalignment='top',
+            bbox=dict(boxstyle='round', facecolor='lightyellow', alpha=0.7))
+
+    plt.tight_layout()
+    output_path = os.path.join(FIGURES_DIR, 'comparative_forecast.pdf')
+    plt.savefig(output_path, format='pdf', dpi=300, bbox_inches='tight')
+    plt.close()
+    print(f"  ✓ Created: {output_path}")
+
+
 def create_combined_pdf(btc_monthly, gold_brics_monthly, oil_brics_monthly,
                         output_filename='all_predictions_combined.pdf'):
     """
@@ -806,7 +902,7 @@ def main():
     gold_path = 'Gold_TradeData_Cleaned.csv'
     oil_path = 'Oil_TradeData_Cleaned.csv'
 
-    print("\n[1/8] Loading and processing data...")
+    print("\n[1/9] Loading and processing data...")
     btc_monthly, gold_brics_monthly, oil_brics_monthly = load_and_process_data(
         btc_path, gold_path, oil_path)
 
@@ -814,26 +910,29 @@ def main():
     print(f"  ✓ Gold BRICS data: {len(gold_brics_monthly)} months")
     print(f"  ✓ Oil BRICS data: {len(oil_brics_monthly)} months")
 
-    print("\n[2/8] Creating BTC forecast figure...")
+    print("\n[2/9] Creating BTC forecast figure...")
     plot_btc_forecast(btc_monthly, 'btc_forecast.pdf')
 
-    print("\n[3/8] Creating Gold BRICS forecast figure...")
+    print("\n[3/9] Creating Gold BRICS forecast figure...")
     plot_gold_forecast(gold_brics_monthly, 'gold_brics_forecast.pdf')
 
-    print("\n[4/8] Creating Oil BRICS forecast figure...")
+    print("\n[4/9] Creating Oil BRICS forecast figure...")
     plot_oil_forecast(oil_brics_monthly, 'oil_brics_forecast.pdf')
 
-    print("\n[5/8] Creating individual time series figures...")
+    print("\n[5/9] Creating individual time series figures...")
     plot_reserves_time_series(btc_monthly, gold_brics_monthly, oil_brics_monthly)
 
-    print("\n[6/8] Creating comparative analysis chart...")
+    print("\n[6/9] Creating comparative analysis chart...")
     plot_comparative_chart(btc_monthly, gold_brics_monthly, oil_brics_monthly)
 
-    print("\n[7/8] Creating combined PDF with all predictions...")
+    print("\n[7/9] Creating comparative forecast chart...")
+    plot_comparative_forecast(btc_monthly, gold_brics_monthly, oil_brics_monthly)
+
+    print("\n[8/9] Creating combined PDF with all predictions...")
     create_combined_pdf(btc_monthly, gold_brics_monthly, oil_brics_monthly,
                        'all_predictions_combined.pdf')
 
-    print("\n[8/8] Summary complete!")
+    print("\n[9/9] Summary complete!")
 
     print("\n" + "=" * 70)
     print("SUCCESS! All prediction figures generated as PDFs")
@@ -850,9 +949,10 @@ def main():
     print("  6. oil_reserves_timeseries.pdf - Oil imports over time")
     print("\n  COMPARATIVE ANALYSIS:")
     print("  7. comparative_analysis.pdf - All three commodities compared (normalized)")
+    print("  8. comparative_forecast.pdf - All three commodities with 3-month forecasts")
     print("\n  COMBINED DOCUMENT:")
-    print("  8. all_predictions_combined.pdf - All forecasts in one PDF")
-    print("\nTotal: 8 PDF files generated")
+    print("  9. all_predictions_combined.pdf - All forecasts in one PDF")
+    print("\nTotal: 9 PDF files generated")
     print("\nAll figures include:")
     print("  • Historical data (solid lines with markers)")
     print("  • Statistical information (mean, std dev, trends)")

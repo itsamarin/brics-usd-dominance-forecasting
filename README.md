@@ -2,92 +2,77 @@
 
 **Research Question:** *"Will USD still remain the dominant currency in the world post-July 2027?"*
 
-This project analyzes USD dominance through predictive forecasting of Bitcoin trading volume, BRICS gold imports, and BRICS crude oil imports using 3-month moving averages.
+This project analyzes USD dominance through predictive forecasting of Bitcoin trading volume, BRICS gold imports, and BRICS crude oil imports.
 
-## Quick Start - Generate Figures
+## 🚀 Quick Start - Generate Figures
 
-### Prerequisites
-- Python 3.8+
-- Your data files: `Btc_5y_Cleaned.csv`, `Gold_TradeData_Cleaned.csv`, `Oil_TradeData_Cleaned.csv`
-
-### Installation
+### 1. Install Dependencies
 
 ```bash
-# Navigate to the analysis directory
+pip install pandas matplotlib numpy openpyxl
+```
+
+### 2. Add Your Data Files
+
+Place your 3 cleaned CSV files in `predictive-analysis-forecasts/`:
+- `Btc_5y_Cleaned.csv`
+- `Gold_TradeData_Cleaned.csv`
+- `Oil_TradeData_Cleaned.csv`
+
+### 3. Generate All Figures
+
+```bash
 cd predictive-analysis-forecasts
-
-# Install dependencies
-pip install -r requirements.txt
+python3 generate_prediction_figures.py
 ```
 
-### Generate All Figures
+**Output:** 9 PDF files in `figures/` directory (ready for publication)
 
-```bash
-# Step 1: Generate forecasts and Excel workbook
-python predictive_analysis_forecast.py
+## 📊 Generated Figures (9 PDFs)
 
-# Step 2: Add professional charts/figures
-python add_charts_to_forecasts.py
+### Forecast Figures (with 3-month predictions)
+1. **btc_forecast.pdf** - Bitcoin trading volume + forecast
+2. **gold_brics_forecast.pdf** - Gold imports + forecast (2 charts)
+3. **oil_brics_forecast.pdf** - Oil imports + forecast (2 charts)
 
-# Output: Predictive_Analysis_Forecasts_with_Charts.xlsx
-```
+### Time Series Figures (complete historical analysis)
+4. **btc_reserves_timeseries.pdf** - BTC over time with statistics
+5. **gold_reserves_timeseries.pdf** - Gold over time with statistics
+6. **oil_reserves_timeseries.pdf** - Oil over time with statistics
 
-## What You'll Get
+### Comparative Analysis
+7. **comparative_analysis.pdf** - All 3 commodities normalized together
+8. **comparative_forecast.pdf** - All 3 commodities with 3-month forecasts
 
-The analysis produces **5 professional figures** in an Excel workbook:
+### Combined Document
+9. **all_predictions_combined.pdf** - All forecasts in one PDF
 
-1. **Bitcoin USD Trading Volume Chart**
-   - Historical trends (2020-2025)
-   - 3-month moving average
-   - Q1 2026 forecast
+All figures include:
+- ✓ 300 DPI publication quality
+- ✓ Professional formatting with grids and legends
+- ✓ Statistical analysis (mean, std dev, trends)
+- ✓ Vector PDFs (scale to any size)
 
-2. **BRICS Gold Imports - Quantity Chart**
-   - Import volumes (kg) across BRICS nations
-   - Central bank accumulation patterns
-
-3. **BRICS Gold Imports - Value Chart**
-   - Import values (USD) showing investment scale
-   - De-dollarization indicators
-
-4. **BRICS Crude Oil Imports - Quantity Chart**
-   - Energy security patterns
-   - Import volumes across BRICS
-
-5. **BRICS Crude Oil Imports - Value Chart**
-   - Energy expenditure trends
-   - Alternative settlement currency analysis
-
-All charts include:
-- ✓ Historical data (solid lines)
-- ✓ 3-month moving averages (smoothed trends)
-- ✓ 3-month forecasts (dashed projection lines)
-
-## File Structure
+## 📁 Project Structure
 
 ```
 brics-usd-dominance-forecasting/
 ├── README.md                                    # This file
-├── predictive-analysis-forecasts/              # Main analysis directory
-│   ├── predictive_analysis_forecast.py         # Core forecasting script
-│   ├── add_charts_to_forecasts.py              # Chart generation script
-│   ├── recalc.py                               # Excel formula recalculation
-│   ├── requirements.txt                        # Python dependencies
-│   ├── README.md                               # Detailed documentation
-│   ├── QUICKSTART.md                           # 5-minute setup guide
-│   ├── CHARTS_GUIDE.md                         # Chart specifications
-│   └── [Your CSV data files]                   # Place here
-└── Predictive_Analysis_Forecasts_with_Charts.xlsx  # Final output
+├── figures/                                     # Generated PDFs (output)
+│   ├── btc_forecast.pdf
+│   ├── gold_brics_forecast.pdf
+│   ├── oil_brics_forecast.pdf
+│   ├── btc_reserves_timeseries.pdf
+│   ├── gold_reserves_timeseries.pdf
+│   ├── oil_reserves_timeseries.pdf
+│   ├── comparative_analysis.pdf
+│   └── all_predictions_combined.pdf
+└── predictive-analysis-forecasts/              # Analysis scripts
+    ├── generate_prediction_figures.py          # Main script
+    ├── Btc_5y_Cleaned.csv                      # Your data (add here)
+    ├── Gold_TradeData_Cleaned.csv              # Your data (add here)
+    └── Oil_TradeData_Cleaned.csv               # Your data (add here)
 ```
-
-## Detailed Documentation
-
-For more information, see the comprehensive guides in [predictive-analysis-forecasts/](predictive-analysis-forecasts/):
-
-- [README.md](predictive-analysis-forecasts/README.md) - Full project documentation
-- [QUICKSTART.md](predictive-analysis-forecasts/QUICKSTART.md) - 5-minute beginner guide
-- [CHARTS_GUIDE.md](predictive-analysis-forecasts/CHARTS_GUIDE.md) - Chart specifications and customization
-- [USAGE.md](predictive-analysis-forecasts/USAGE.md) - Advanced usage and customization
-- [SETUP_GUIDE.md](predictive-analysis-forecasts/SETUP_GUIDE.md) - Detailed installation instructions
 
 ## Key Findings
 
@@ -124,18 +109,19 @@ This approach:
 - ⚠ Cannot predict sudden shocks
 - ⚠ Assumes recent patterns continue
 
-## Troubleshooting
+## 🔧 Troubleshooting
 
 **Missing modules:**
 ```bash
-pip install pandas openpyxl numpy
+pip install pandas matplotlib numpy openpyxl
 ```
 
 **Data files not found:**
-Ensure your CSV files are in the `predictive-analysis-forecasts/` directory.
+- Place CSV files in `predictive-analysis-forecasts/` directory
+- Check filenames match exactly (case-sensitive)
 
-**Charts not displaying:**
-Open the Excel file in Microsoft Excel 2016+ or LibreOffice (Google Sheets may not display charts properly).
+**Column errors:**
+- Verify your CSV files have required columns (see [DATA_SETUP.md](predictive-analysis-forecasts/DATA_SETUP.md))
 
 ## Academic Context
 
